@@ -28,7 +28,7 @@ até a nomenclatura de variávies e metódos.
 
 O projeto está dividido em quatro camadas principais:
 
-LarSolution/
+LarSolution/ <br>
 │
 ├─ Lar.API -> Camada de apresentação (Controllers, autenticação JWT)
 ├─ Lar.Application -> Lógica de negócio (Services, DTOs, Validators, AutoMapper)
