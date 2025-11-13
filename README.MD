@@ -29,12 +29,12 @@ até a nomenclatura de variávies e metódos.
 O projeto está dividido em quatro camadas principais:
 
 LarSolution/ <br>
-│
-├─ Lar.API -> Camada de apresentação (Controllers, autenticação JWT)
-├─ Lar.Application -> Lógica de negócio (Services, DTOs, Validators, AutoMapper)
-├─ Lar.Domain -> Entidades e interfaces de repositórios
-├─ Lar.Infrastructure -> Implementação de repositórios, DbContext e acesso ao banco
-├─ Lar.Tests -> Testes unitários e de controllers
+│ <br>
+├─ Lar.API -> Camada de apresentação (Controllers, autenticação JWT) <br>
+├─ Lar.Application -> Lógica de negócio (Services, DTOs, Validators, AutoMapper) <br>
+├─ Lar.Domain -> Entidades e interfaces de repositórios <br>
+├─ Lar.Infrastructure -> Implementação de repositórios, DbContext e acesso ao banco <br>
+├─ Lar.Tests -> Testes unitários e de controllers <br>
 
 ---
 
@@ -108,19 +108,27 @@ git clone <URL_DO_REPOSITORIO>
 cd LarSolution
 
 # 1. Clonar o repositório:
-git clone <URL_DO_REPOSITORIO>
+`
+git clone <URL_DO_REPOSITORIO> <br>
 cd LarSolution
+`
 
 # 2. Restaurar pacotes:
+`
 dotnet restore
+`
 
 # 3. Criar banco e aplicar migrations:
-cd Lar.Infrastructure
+`
+cd Lar.Infrastructure <br>
 dotnet ef database update
+`
 
 ## 4. Executar a API:
-cd Lar.API
+`
+cd Lar.API <br>
 dotnet run
+`
 
 ## Testar endpoints via Swagger:
 Acesse https://localhost:<porta>/swagger
@@ -130,14 +138,17 @@ Acesse https://localhost:<porta>/swagger
 # Exemplos de chamadas de API
 
 ## Criar Pessoa
+`
 POST /api/pessoas
 Body:
 {
   "nome": "João Silva",
   "email": "joao@email.com"
 }
+`
 
 ## Login
+`
 POST /api/auth/login
 Body:
 {
@@ -148,8 +159,10 @@ Response:
 {
   "token": "<JWT_TOKEN>"
 }
+`
 
 ## Criar Usuário
+`
 POST /api/usuarios
 Body:
 {
@@ -157,12 +170,14 @@ Body:
   "password": "123456",
   "pessoaId": 1
 }
+`
 
 ## Consultar Telefones por Pessoa
+`
 GET /api/telefones/pessoa/1
 Headers:
 Authorization: Bearer <JWT_TOKEN>
-
+`
 ---
 
 # Observações
