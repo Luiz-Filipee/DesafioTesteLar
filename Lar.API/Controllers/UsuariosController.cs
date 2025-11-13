@@ -40,7 +40,8 @@ public class UsuariosController : ControllerBase
     {
         var usuario = await _service.GetByIdAsync(id);
         
-        if (usuario == null) throw new KeyNotFoundException($"Usuário {id} não encontrada");
+        if (usuario == null) 
+            return NotFound($"Usuário {id} não encontrada");
 
         var response = new UsuarioResponseDto(usuario.Id, usuario.Username, usuario.PessoaId);
         return Ok(response);

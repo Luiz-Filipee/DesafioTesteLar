@@ -31,7 +31,7 @@ public class TelefonesController : ControllerBase
         var telefone = await _service.GetByIdAsync(id);
         
         if (telefone == null) 
-            throw new KeyNotFoundException($"Telefone {id} não encontrada");
+            return NotFound($"Telefone {id} não encontrada");
         
         return Ok(telefone);
     }

@@ -27,7 +27,7 @@ public class AuthController : ControllerBase
 
         var isValid = await _authService.ValidateUserAsync(request.Username, request.Password);
         if (!isValid)
-            throw new UnauthorizedAccessException("Usuário ou senha inválidos");
+            return NotFound("Usuário ou senha inválidos");
 
         var token = GenerateJwtToken(request.Username);
 

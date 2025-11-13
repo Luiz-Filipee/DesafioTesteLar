@@ -25,7 +25,7 @@ namespace Lar.Tests.Controllers
         {
             _serviceMock.Setup(s => s.GetByIdAsync(1)).ReturnsAsync((TelefoneDto?)null);
             var result = await _controller.GetById(1);
-            Assert.IsType<NotFoundResult>(result);
+            Assert.IsType<NotFoundObjectResult>(result);
         }
 
 

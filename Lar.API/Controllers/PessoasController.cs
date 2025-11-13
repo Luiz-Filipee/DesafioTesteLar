@@ -32,7 +32,8 @@ public class PessoasController : ControllerBase
     {
         var p = await _service.GetByIdAsync(id);
         
-        if (p == null)  throw new KeyNotFoundException($"Pessoa {id} não encontrada");
+        if (p == null)  
+            return NotFound($"Pessoa {id} não encontrada");
         
         return Ok(p);
     }
