@@ -189,9 +189,11 @@ Body:
 `
 
 ## Consultar Telefones por Pessoa
+`
 GET /api/telefones/pessoa/1 
 Headers:  
 Authorization: Bearer <JWT_TOKEN>
+`
 
 ---
 
