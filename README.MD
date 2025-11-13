@@ -1,9 +1,7 @@
-# LarSolution
+# 🧩 LarSolution
 
-Projeto desenvolvido em .NET 8 com arquitetura em camadas, utilizando **Entity Framework Core**, **AutoMapper**, **FluentValidation**, **JWT Authentication**, **Middleware**, **Docker**, **Swagger** e **Serilog** para logging. O projeto consiste em um sistema de gerenciamento de **usuários, pessoas e telefones**.
-
-O projeto segue todas as convenções se SOLID e CLEAN CODE, desde a estruturação das pastas dos arquivos
-até a nomenclatura de variávies e metódos.
+Aplicação desenvolvida em **.NET 8**, estruturada com **arquitetura em camadas** (Clean Architecture) e aplicação dos princípios **SOLID** e **Clean Code**.  
+O sistema tem como objetivo o gerenciamento de **usuários, pessoas e telefones**, contemplando autenticação JWT, logging estruturado, validações robustas e integração com Docker.
 
 ---
 
@@ -11,15 +9,15 @@ até a nomenclatura de variávies e metódos.
 
 - **.NET 8**
 - **ASP.NET Core Web API**
-- **Entity Framework Core (PostgreSQL, InMemory, SQLite)**
+- **Entity Framework Core** (PostgreSQL, InMemory e SQLite)
 - **AutoMapper**
 - **FluentValidation**
 - **JWT Authentication**
-- **Middleware**
-- **Docker**
-- **Swagger**
-- **BCrypt.Net** (para hashing de senhas)
+- **Middleware personalizado**
+- **Docker / Docker Compose**
+- **Swagger (Swashbuckle)**
 - **Serilog** (logging)
+- **BCrypt.Net** (hash de senhas)
 - **xUnit**, **Moq**, **FluentAssertions** (testes unitários e de integração)
 
 ---
@@ -35,6 +33,15 @@ LarSolution/ <br>
 ├─ Lar.Domain -> Entidades e interfaces de repositórios <br>
 ├─ Lar.Infrastructure -> Implementação de repositórios, DbContext e acesso ao banco <br>
 ├─ Lar.Tests -> Testes unitários e de controllers <br>
+
+
+**Padrões aplicados:**
+- Repository Pattern  
+- Dependency Injection  
+- DTOs e Mappers  
+- Validation Layer  
+- Middleware de erro global  
+- Logging estruturado (Serilog)
 
 ---
 
@@ -78,16 +85,20 @@ LarSolution/ <br>
 - Configuração no `appsettings.json`:
 
 ### Docker
-- Imagem da API construida
-- docker composer contendo o banco de dados
+- A imagem da API é construída via Dockerfile
+- O docker-compose.yml configura a API e o banco PostgreSQL
+
+**Subir todo o ambiente**
+`docker-compose up --build`
 
 ---
 
 ## Logging
 
-- Configurado com Serilog para console
-- Logs de criação, atualização, exclusão e erros
-- Avisos quando registros não são encontrados
+- Implementado com Serilog
+- Logs para criação, atualização, exclusão e erros
+- Saída no console e integração com providers externos (extensível)
+- Middleware global captura exceções e retorna resposta padronizada
 
 ---
 
@@ -99,28 +110,31 @@ LarSolution/ <br>
 - Controllers: UsuariosController, PessoasController, TelefonesController, AuthController
 - Validações simuladas usando mocks do FluentValidation
 
+**Rodar os testes**
+`dotnet test`
+
 ---
 
-## Como rodar o projeto
+# Como executar o projeto
 
-# Clonar o repositório:
+## Clonar o repositório:
 `
 git clone <URL_DO_REPOSITORIO>
 cd LarSolution
 `
 
-# 1. Clonar o repositório:
+## 1. Clonar o repositório:
 `
 git clone <URL_DO_REPOSITORIO>
 cd LarSolution
 `
 
-# 2. Restaurar pacotes:
+## 2. Restaurar pacotes:
 `
 dotnet restore
 `
 
-# 3. Criar banco e aplicar migrations:
+## 3. Criar banco e aplicar migrations:
 `
 cd Lar.Infrastructure 
 dotnet ef database update
@@ -186,6 +200,15 @@ Authorization: Bearer <JWT_TOKEN>
 - Senhas nunca são armazenadas em texto claro
 - Logs monitoram operações críticas
 - Projeto estruturado para manutenção e escalabilidade
+- Estrutura projetada para facilidade de manutenção e escalabilidade
+
+---
+
+Autor
+
+Luiz Filipe
+Desenvolvedor .NET | Clean Architecture | SOLID | Docker | Testes Automatizados
+🔗 GitHub
 
 ---
 
