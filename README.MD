@@ -104,12 +104,14 @@ LarSolution/ <br>
 ## Como rodar o projeto
 
 # Clonar o repositório:
+`
 git clone <URL_DO_REPOSITORIO>
 cd LarSolution
+`
 
 # 1. Clonar o repositório:
 `
-git clone <URL_DO_REPOSITORIO> <br>
+git clone <URL_DO_REPOSITORIO>
 cd LarSolution
 `
 
@@ -120,13 +122,13 @@ dotnet restore
 
 # 3. Criar banco e aplicar migrations:
 `
-cd Lar.Infrastructure <br>
+cd Lar.Infrastructure 
 dotnet ef database update
 `
 
 ## 4. Executar a API:
 `
-cd Lar.API <br>
+cd Lar.API 
 dotnet run
 `
 
@@ -139,43 +141,43 @@ Acesse https://localhost:5026/swagger
 
 ## Criar Pessoa
 `
-POST /api/pessoas  <br>
-Body:  <br>
-{  <br>
-  "nome": "João Silva",  <br>
-  "email": "joao@email.com"  <br>
+POST /api/pessoas  
+Body:  
+{  
+  "nome": "João Silva",  
+  "email": "joao@email.com"  
 }
 `
 
 ## Login
 `
-POST /api/auth/login  <br>
-Body:  <br>
-{  <br>
-  "username": "joaos",  <br>
-  "password": "123456"  <br>
-}  <br> 
-Response:  <br>
-{  <br>
-  "token": "<JWT_TOKEN>"  <br>
+POST /api/auth/login
+Body: 
+{ 
+  "username": "joaos",
+  "password": "123456"
+} 
+Response:
+{ 
+  "token": "<JWT_TOKEN>" 
 }
 `
 
 ## Criar Usuário
 `
-POST /api/usuarios  <br> 
-Body:  <br>
-{  <br>
-  "username": "joaos",  <br>
-  "password": "123456",  <br> 
-  "pessoaId": 1  <br>
+POST /api/usuarios >
+Body: 
+{  
+  "username": "joaos", 
+  "password": "123456", 
+  "pessoaId": 1  
 }
 `
 
 ## Consultar Telefones por Pessoa
 `
-GET /api/telefones/pessoa/1  <br>
-Headers:  <br>
+GET /api/telefones/pessoa/1 
+Headers:  
 Authorization: Bearer <JWT_TOKEN>
 `
 ---
