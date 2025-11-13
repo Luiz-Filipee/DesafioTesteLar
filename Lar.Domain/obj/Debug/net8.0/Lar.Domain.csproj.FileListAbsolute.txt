@@ -1,0 +1,11 @@
+C:\Users\user\Documents\LarSolution\Lar.Domain\bin\Debug\net8.0\Lar.Domain.deps.json
+C:\Users\user\Documents\LarSolution\Lar.Domain\bin\Debug\net8.0\Lar.Domain.dll
+C:\Users\user\Documents\LarSolution\Lar.Domain\bin\Debug\net8.0\Lar.Domain.pdb
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\Lar.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\Lar.Domain.AssemblyInfoInputs.cache
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\Lar.Domain.AssemblyInfo.cs
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\Lar.Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\Lar.Domain.dll
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\refint\Lar.Domain.dll
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\Lar.Domain.pdb
+C:\Users\user\Documents\LarSolution\Lar.Domain\obj\Debug\net8.0\ref\Lar.Domain.dll
