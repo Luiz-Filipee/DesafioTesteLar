@@ -3,6 +3,8 @@
 Aplicação desenvolvida em **.NET 8**, estruturada com **arquitetura em camadas** (Clean Architecture) e aplicação dos princípios **SOLID** e **Clean Code**.  
 O sistema tem como objetivo o gerenciamento de **usuários, pessoas e telefones**, contemplando autenticação JWT, logging estruturado, validações robustas e integração com Docker.
 
+💡 O arquivo .env, configurações do docker e outros documentos que não precisam necessariamente estar presente no repositório, tenho total ciência do uso do .gitigonore, porém todos contém valores de exemplo apenas para facilitar a execução do teste técnico.
+
 ---
 
 ## Tecnologias utilizadas
