@@ -131,7 +131,7 @@ dotnet run
 `
 
 ## Testar endpoints via Swagger:
-Acesse https://localhost:<porta>/swagger
+Acesse https://localhost:5026/swagger
 
 ---
 
@@ -139,43 +139,43 @@ Acesse https://localhost:<porta>/swagger
 
 ## Criar Pessoa
 `
-POST /api/pessoas
-Body:
-{
-  "nome": "João Silva",
-  "email": "joao@email.com"
+POST /api/pessoas  <br>
+Body:  <br>
+{  <br>
+  "nome": "João Silva",  <br>
+  "email": "joao@email.com"  <br>
 }
 `
 
 ## Login
 `
-POST /api/auth/login
-Body:
-{
-  "username": "joaos",
-  "password": "123456"
-}
-Response:
-{
-  "token": "<JWT_TOKEN>"
+POST /api/auth/login  <br>
+Body:  <br>
+{  <br>
+  "username": "joaos",  <br>
+  "password": "123456"  <br>
+}  <br> 
+Response:  <br>
+{  <br>
+  "token": "<JWT_TOKEN>"  <br>
 }
 `
 
 ## Criar Usuário
 `
-POST /api/usuarios
-Body:
-{
-  "username": "joaos",
-  "password": "123456",
-  "pessoaId": 1
+POST /api/usuarios  <br> 
+Body:  <br>
+{  <br>
+  "username": "joaos",  <br>
+  "password": "123456",  <br> 
+  "pessoaId": 1  <br>
 }
 `
 
 ## Consultar Telefones por Pessoa
 `
-GET /api/telefones/pessoa/1
-Headers:
+GET /api/telefones/pessoa/1  <br>
+Headers:  <br>
 Authorization: Bearer <JWT_TOKEN>
 `
 ---
