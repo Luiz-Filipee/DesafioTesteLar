@@ -41,8 +41,9 @@ public class UsuariosController : ControllerBase
         var usuario = await _service.GetByIdAsync(id);
         
         if (usuario == null) throw new KeyNotFoundException($"Usuário {id} não encontrada");
-       
-        return Ok(usuario);
+
+        var response = new UsuarioResponseDto(usuario.Id, usuario.Username, usuario.PessoaId);
+        return Ok(response);
     }
 
     [HttpPut("{id:int}")]
@@ -54,7 +55,11 @@ public class UsuariosController : ControllerBase
             return BadRequest(val.Errors.Select(e => e.ErrorMessage));
         
         await _service.UpdateAsync(id, dto);
-        return NoContent();
+        
+        var updated = await _service.GetByIdAsync(id);
+        var response = new UsuarioResponseDto(updated.Id, updated.Username, updated.PessoaId);
+
+        return Ok(response);
     }
 
     [HttpDelete("{id:int}")]
