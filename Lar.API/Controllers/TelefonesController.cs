@@ -41,14 +41,19 @@ public class TelefonesController : ControllerBase
     {
         var created = await _service.CreateAsync(dto);
         
-        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        var response = new TelefoneResponseDto(created.Id, created.Numero, created.PessoaId);
+        return Ok(response);
     }
 
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateTelefoneDto dto)
     {
         await _service.UpdateAsync(id, dto);
-        return NoContent();
+
+        var updated = await _service.GetByIdAsync(id);
+        var response = new TelefoneResponseDto(updated.Id, updated.Numero, updated.PessoaId);
+
+        return Ok(response);
     }
 
     [HttpDelete("{id:int}")]
@@ -56,6 +61,6 @@ public class TelefonesController : ControllerBase
     {
         await _service.DeleteAsync(id);
         
-        return NoContent();
+        return Ok(new { mensagem = $"Telefone com ID {id} deletado com sucesso." });
     }
 }

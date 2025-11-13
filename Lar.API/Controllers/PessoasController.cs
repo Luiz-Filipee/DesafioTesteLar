@@ -47,7 +47,8 @@ public class PessoasController : ControllerBase
         
         var created = await _service.CreateAsync(dto);
         
-        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+        var response = new PessoaResponseDto(created.Id, created.Nome, created.Email);
+        return Ok(response);
     }
 
     [HttpPut("{id:int}")]
@@ -59,13 +60,18 @@ public class PessoasController : ControllerBase
             return BadRequest(val.Errors.Select(e => e.ErrorMessage));
         
         await _service.UpdateAsync(id, dto);
-        return NoContent();
+
+        var updated = await _service.GetByIdAsync(id);
+        var response = new PessoaResponseDto(updated.Id, updated.Nome, updated.Email);
+
+        return Ok(response);
     }
 
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {
         await _service.DeleteAsync(id);
-        return NoContent();
+
+        return Ok(new { mensagem = $"Pessoa com ID {id} deletado com sucesso." });
     }
 }

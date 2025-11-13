@@ -56,7 +56,7 @@ public class UsuariosController : ControllerBase
             return BadRequest(val.Errors.Select(e => e.ErrorMessage));
         
         await _service.UpdateAsync(id, dto);
-        
+
         var updated = await _service.GetByIdAsync(id);
         var response = new UsuarioResponseDto(updated.Id, updated.Username, updated.PessoaId);
 
@@ -68,6 +68,6 @@ public class UsuariosController : ControllerBase
     {
         await _service.DeleteAsync(id);
         
-        return NoContent();
+        return Ok(new { mensagem = $"Usuário com ID {id} deletado com sucesso." });
     }
 }
