@@ -229,7 +229,14 @@ Desenvolvedor .NET | Clean Architecture | SOLID | Docker | Testes Automatizados
 
 ---
 
+# Configuração do Banco de Dados
+
+- O projeto utiliza PostgreSQL.
+- Antes de rodar a API, configure o banco localmente ou via Docker:
+
 ```json
+`docker-compose up -d`
+
 "ConnectionStrings": {
   "PostgresConnection": "Host=localhost;Database=LarDb;Username=postgres;Password=senha"
 }
