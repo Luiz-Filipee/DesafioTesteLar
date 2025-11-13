@@ -1,3 +1,5 @@
+![.NET CI](https://github.com/Luiz-Filipee/DesafioTesteLar/actions/workflows/dotnet.yml/badge.svg)
+
 # 🧩 LarSolution
 
 Aplicação desenvolvida em **.NET 8**, estruturada com **arquitetura em camadas** (Clean Architecture) e aplicação dos princípios **SOLID** e **Clean Code**.  
