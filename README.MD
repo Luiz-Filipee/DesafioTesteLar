@@ -23,6 +23,7 @@ O sistema tem como objetivo o gerenciamento de **usuários, pessoas e telefones*
 - **Serilog** (logging)
 - **BCrypt.Net** (hash de senhas)
 - **xUnit**, **Moq**, **FluentAssertions** (testes unitários e de integração)
+- **GitHub Actions (CI/CD)**
 
 ---
 
@@ -116,6 +117,16 @@ LarSolution/ <br>
 
 **Rodar os testes**
 `dotnet test`
+
+---
+
+## Integração Contínua (CI/CD)
+### O projeto possui pipeline automatizado via GitHub Actions, definido em .github/workflows/dotnet.yml.
+### O fluxo executa automaticamente a cada push ou pull request:
+- Restaura dependências (dotnet restore)
+- Compila a solução (dotnet build)
+- Executa todos os testes unitários (dotnet test)
+- Valida a integridade da aplicação
 
 ---
 
